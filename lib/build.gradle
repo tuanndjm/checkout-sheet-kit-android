@@ -126,6 +126,10 @@ tasks.withType(KotlinCompile).configureEach {
     }
 }
 
+tasks.withType(Sign).configureEach {
+    onlyIf { false } // ❌ disables all signing
+}
+
 project.afterEvaluate {
     publishing {
         publications {
